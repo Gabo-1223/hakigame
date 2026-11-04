@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/html.png">
+  <title>Centro de Soporte & FAQ | HAKIGAMES</title>
+  <!-- Estilos Gamer Modernos -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==========================================
+       HEADER & NAVEGACIÓN
+       ========================================== -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <span class="logo-icon">⚡</span>
+        <span class="brand-name">HAKI<span class="brand-highlight">GAMES</span></span>
+      </a>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="tienda.html">Tienda / Recargas</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="contacto.html" class="active">Soporte & FAQ</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="tienda.html" class="btn btn-primary">⚡ Recargar</a>
+        <button class="mobile-menu-btn" aria-label="Abrir menú">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- ==========================================
+         HERO DE SOPORTE
+         ========================================== -->
+    <div class="support-hero">
+      <div class="hero-tag">
+        <span class="pulse"></span>
+        Atención Gamer en Vivo 24/7
+      </div>
+      <h1 class="hero-title" style="font-size: 2.4rem;">
+        ¿Necesitas ayuda con una recarga? <br>
+        <span class="text-gradient">Estamos aquí para resolverlo al instante</span>
+      </h1>
+      <p class="hero-subtitle" style="margin: 0 auto 35px;">
+        Contáctanos por nuestros canales directos o déjanos un ticket con el ID de tu pedido.
+      </p>
+    </div>
+
+    <!-- ==========================================
+         CANALES RÁPIDOS DE ATENCIÓN
+         ========================================== -->
+    <div class="support-channels">
+      <div class="channel-card">
+        <div class="channel-icon">💬</div>
+        <h3 style="margin-bottom: 6px;">WhatsApp Gamer</h3>
+        <p style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 14px;">
+          Respuesta en menos de 5 minutos por agentes dedicados.
+        </p>
+        <a href="https://whatsapp.com" target="_blank" class="btn btn-outline" style="width: 100%;">Chatear por WhatsApp</a>
+      </div>
+
+      <div class="channel-card">
+        <div class="channel-icon">🎮</div>
+        <h3 style="margin-bottom: 6px;">Comunidad Discord</h3>
+        <p style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 14px;">
+          Abre un ticket privado con moderadores de Hakigames.
+        </p>
+        <a href="https://discord.com" target="_blank" class="btn btn-outline" style="width: 100%;">Unirse al Discord</a>
+      </div>
+
+      <div class="channel-card">
+        <div class="channel-icon">✉️</div>
+        <h3 style="margin-bottom: 6px;">Correo Oficial</h3>
+        <p style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 14px;">
+          Para consultas comerciales y soporte formal.
+        </p>
+        <a href="mailto:soporte@hakigames.com" class="btn btn-outline" style="width: 100%;">soporte@hakigames.com</a>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         FORMULARIO + PREGUNTAS FRECUENTES (FAQ)
+         ========================================== -->
+    <div class="support-layout">
+      <!-- Formulario de Ticket -->
+      <section>
+        <form class="gamer-form" id="supportForm">
+          <h2 style="font-size: 1.4rem; margin-bottom: 6px;">📩 Enviar Ticket de Ayuda</h2>
+          <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 22px;">
+            Completa los datos y te responderemos en tu correo en menos de 15 minutos.
+          </p>
+
+          <div class="form-group">
+            <label for="userName">Tu Nombre / Nickname</label>
+            <input type="text" id="userName" class="form-control" placeholder="Ej: Alex Hunter" required>
+          </div>
+
+          <div class="form-group">
+            <label for="userEmail">Correo Electrónico</label>
+            <input type="email" id="userEmail" class="form-control" placeholder="nombre@correo.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="gameSelect">Juego o Servicio</label>
+            <select id="gameSelect" class="form-control">
+              <option value="freefire">Free Fire</option>
+              <option value="valorant">Valorant</option>
+              <option value="roblox">Roblox</option>
+              <option value="mobilelegends">Mobile Legends</option>
+              <option value="steam">Steam Wallet</option>
+              <option value="lol">League of Legends</option>
+              <option value="otro">Otro Servicio / Consulta General</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="orderId">ID de Jugador o N° de Orden (Opcional)</label>
+            <input type="text" id="orderId" class="form-control" placeholder="Ej: 94820194 o #HK-8492">
+          </div>
+
+          <div class="form-group">
+            <label for="userMessage">¿En qué podemos ayudarte?</label>
+            <textarea id="userMessage" class="form-control" rows="4" placeholder="Describe tu consulta o detalle del pedido..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">
+            🚀 Enviar Ticket de Soporte
+          </button>
+        </form>
+      </section>
+
+      <!-- Acordeón FAQ Interactivo -->
+      <section class="faq-wrap">
+        <h2 style="font-size: 1.4rem; margin-bottom: 6px;">❓ Preguntas Frecuentes (FAQ)</h2>
+        <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 20px;">
+          Respuestas rápidas a las dudas más comunes de los usuarios.
+        </p>
+
+        <div class="faq-item open">
+          <button class="faq-question">
+            <span>¿Cuánto tiempo tarda en llegar mi recarga?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            El 98% de nuestras recargas se procesan de forma automatizada mediante API oficial en menos de <strong>60 segundos</strong> una vez confirmado el pago.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿Existe algún riesgo de baneo para mi cuenta?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <strong>Cero riesgo.</strong> En Hakigames trabajamos únicamente con distribuidores oficiales autorizados por las empresas de videojuegos (Garena, Riot Games, Valve). Nunca pedimos contraseñas de cuentas, solo tu ID o código de canje directo.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿Qué datos necesito para recargar?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Solo necesitas tu <strong>ID de jugador / UID</strong> (visible en tu perfil del juego) o tu correo para recibir los códigos digitales. Nunca compartas tu clave secreta.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿Qué métodos de pago son aceptados?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Aceptamos Mercado Pago, tarjetas de crédito/débito (Visa, Mastercard), PayPal, Binance Pay (USDT) y puntos de pago en efectivo locales (Pago Fácil, Rapipago, OXXO).
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿Qué hago si ingresé mal mi ID?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Escríbenos inmediatamente por WhatsApp con el comprobante de pago. Si la recarga aún no fue despachada por el sistema automático, corregiremos tu ID al instante.
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- ==========================================
+       FOOTER UNIFICADO
+       ========================================== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="brand-logo">
+          <span class="logo-icon">⚡</span>
+          <span class="brand-name">HAKI<span class="brand-highlight">GAMES</span></span>
+        </div>
+        <p>La plataforma gamer líder en recargas de videojuegos y tarjetas digitales con acreditación inmediata y soporte personalizado 24/7.</p>
+        <div class="social-links">
+          <a href="https://discord.com" target="_blank" class="social-pill" title="Discord">🎮</a>
+          <a href="https://instagram.com" target="_blank" class="social-pill" title="Instagram">📸</a>
+          <a href="https://youtube.com" target="_blank" class="social-pill" title="YouTube">📺</a>
+          <a href="https://whatsapp.com" target="_blank" class="social-pill" title="WhatsApp">💬</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="tienda.html">Tienda de Recargas</a></li>
+          <li><a href="nosotros.html">Sobre Nosotros</a></li>
+          <li><a href="contacto.html">Centro de Soporte</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Juegos Populares</h4>
+        <ul>
+          <li><a href="tienda.html">Free Fire Diamantes</a></li>
+          <li><a href="tienda.html">Valorant Points</a></li>
+          <li><a href="tienda.html">Roblox Robux</a></li>
+          <li><a href="tienda.html">Steam Wallet</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Seguridad y Confianza</h4>
+        <ul>
+          <li><a href="contacto.html">Preguntas Frecuentes</a></li>
+          <li><a href="contacto.html">Garantía Anti-Baneo</a></li>
+          <li><a href="contacto.html">Términos de Servicio</a></li>
+          <li><a href="contacto.html">Política de Reembolso</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>© 2026 Hakigames. Todos los derechos reservados. De gamers para gamers.</div>
+      <div>Hecho con HTML5, CSS3 y JavaScript moderno para la web.</div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
