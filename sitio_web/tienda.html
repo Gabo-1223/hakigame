@@ -1,118 +1,394 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/images/html.png">
-    <title>Contacto</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/html.png">
+  <title>Tienda & Recargas | HAKIGAMES</title>
+  <!-- Estilos Gamer Modernos -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Tengo que ir una carpeta para trás con ../ -->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="tienda.html">Tienda</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
-    <h1>Contacto</h1>
 
-    <!-- Tabla -->
-    <table border="1" >
-        <!-- Fila -->
-        <tr>
-            <!-- Columnas -->
-            <th>Nombre</th>
-            <th>Precio</th>
-            <th>Descripcion</th>
-        </tr>
-        <tr>
-            <!-- Filas -->
-            <td>Producto 1</td>
-            <td>$1000</td>
-            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, ut.</td>
-        </tr>
-        <tr>
-            <td>Producto 2</td>
-            <td>$2000</td>
-            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, ut.</td>
-        </tr>
-        <tr>
-            <td>Producto 3</td>
-            <td>$1000</td>
-            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, ut.</td>
-        </tr>
-        <tr>
-            <td>Producto 4</td>
-            <td>$4000</td>
-            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, ut.</td>
-        </tr>
-    </table>
-    <br><br><br>    
-    <!-- No usar br, dar estilos con css -->
-    <!-- Formulario -->
-    <form >
-        <!-- Tenemos varios tipo de input -->
-        <div>
-            <label for="nombre">Nombre</label>
-            <input type="text" name="Nombre" placeholder="Ej:Juan" id="nombre">
+  <!-- ==========================================
+       HEADER & NAVEGACIÓN
+       ========================================== -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <span class="logo-icon">⚡</span>
+        <span class="brand-name">HAKI<span class="brand-highlight">GAMES</span></span>
+      </a>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="tienda.html" class="active">Tienda / Recargas</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="contacto.html">Soporte & FAQ</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="contacto.html" class="btn btn-outline">🎧 Ayuda</a>
+        <button class="mobile-menu-btn" aria-label="Abrir menú">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="padding-top: 35px; padding-bottom: 50px;">
+    <!-- ==========================================
+         ENCABEZADO DE LA TIENDA
+         ========================================== -->
+    <div class="section-header">
+      <div class="section-title-wrap">
+        <h2>🎮 Catálogo Oficial de Recargas</h2>
+        <p>Selecciona tu juego favorito, indica tu ID y recibe tu recarga en menos de 60 segundos.</p>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         BARRA DE FILTROS POR PLATAFORMA
+         ========================================== -->
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">Todos los Juegos</button>
+      <button class="filter-btn" data-filter="mobile">📱 Móviles</button>
+      <button class="filter-btn" data-filter="pc">💻 PC</button>
+      <button class="filter-btn" data-filter="giftcards">🎁 Tarjetas de Regalo</button>
+    </div>
+
+    <!-- ==========================================
+         CUADRÍCULA DE JUEGOS DISPONIBLES
+         ========================================== -->
+    <div class="games-grid">
+      <!-- 1. Free Fire -->
+      <article class="game-card" data-category="mobile">
+        <div class="game-card-img-wrap">
+          <span class="game-tag-badge">Móvil</span>
+          <span class="game-discount-badge">-15% OFF</span>
+          <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80" alt="Free Fire">
         </div>
-
-        <div>
-            <label for="apellido">Apellido</label>
-            <input type="text" name="Apellido" placeholder="Ej:Perez" id="apellido">
+        <div class="game-card-body">
+          <span class="game-category">Garena</span>
+          <h3 class="game-title">Free Fire</h3>
+          <p class="game-desc">Diamantes inmediatos por ID de jugador y Membresías Semanales/Mensuales.</p>
+          <div class="game-card-footer">
+            <div>
+              <span class="game-price-label">Desde</span>
+              <div class="game-price-val">$0.99 USD</div>
+            </div>
+            <button class="btn btn-primary btn-recharge">Recargar</button>
+          </div>
         </div>
+      </article>
 
-        <div>
-            <label for="clave">Contraseña</label>
-            <input type="password" name="clave" id="clave">
-        </div> 
-
-        <div>
-            <label for="teléfono">Teléfono</label>
-            <input type="tel" name="telefono" id="telefono">
+      <!-- 2. Valorant -->
+      <article class="game-card" data-category="pc">
+        <div class="game-card-img-wrap">
+          <span class="game-tag-badge">PC</span>
+          <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=600&q=80" alt="Valorant Points">
         </div>
-
-        <div>
-            <label for="email">Correo Electronico</label>
-            <input type="email" name="email" id="email">
+        <div class="game-card-body">
+          <span class="game-category">Riot Games</span>
+          <h3 class="game-title">Valorant Points</h3>
+          <p class="game-desc">VP oficiales para desbloquear skins exclusivas y pases de batalla.</p>
+          <div class="game-card-footer">
+            <div>
+              <span class="game-price-label">Desde</span>
+              <div class="game-price-val">$4.99 USD</div>
+            </div>
+            <button class="btn btn-primary btn-recharge">Recargar</button>
+          </div>
         </div>
+      </article>
 
-        <div>
-            <label for="comentario">Comentario</label>
-            <textarea name="comentario" id="comentario" cols="20" rows="10"></textarea>
+      <!-- 3. Roblox -->
+      <article class="game-card" data-category="giftcards">
+        <div class="game-card-img-wrap">
+          <span class="game-tag-badge">Gift Card</span>
+          <span class="game-discount-badge">-10% OFF</span>
+          <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80" alt="Roblox">
         </div>
+        <div class="game-card-body">
+          <span class="game-category">Roblox Corp</span>
+          <h3 class="game-title">Roblox Robux</h3>
+          <p class="game-desc">Tarjetas de regalo digitales con código directo para canjear Robux y Premium.</p>
+          <div class="game-card-footer">
+            <div>
+              <span class="game-price-label">Desde</span>
+              <div class="game-price-val">$5.00 USD</div>
+            </div>
+            <button class="btn btn-primary btn-recharge">Recargar</button>
+          </div>
+        </div>
+      </article>
 
-        <div>
-            <label for="femenino">Femenino</label>
-            <input type="radio" name="genero" id="femenino" value="F">
+      <!-- 4. Mobile Legends -->
+      <article class="game-card" data-category="mobile">
+        <div class="game-card-img-wrap">
+          <span class="game-tag-badge">Móvil</span>
+          <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=600&q=80" alt="Mobile Legends">
         </div>
+        <div class="game-card-body">
+          <span class="game-category">Moonton</span>
+          <h3 class="game-title">Mobile Legends: Bang Bang</h3>
+          <p class="game-desc">Diamantes directos por User ID + Zone ID. Pase del Crepúsculo disponible.</p>
+          <div class="game-card-footer">
+            <div>
+              <span class="game-price-label">Desde</span>
+              <div class="game-price-val">$1.49 USD</div>
+            </div>
+            <button class="btn btn-primary btn-recharge">Recargar</button>
+          </div>
+        </div>
+      </article>
 
-        <div>
-            <label for="masculino">Masculino</label>
-            <input type="radio" name="genero" id="masculino" value="M">
+      <!-- 5. Steam Wallet -->
+      <article class="game-card" data-category="pc">
+        <div class="game-card-img-wrap">
+          <span class="game-tag-badge">PC</span>
+          <img src="https://images.unsplash.com/photo-1612287232230-e376a9089849?auto=format&fit=crop&w=600&q=80" alt="Steam Wallet">
         </div>
+        <div class="game-card-body">
+          <span class="game-category">Valve</span>
+          <h3 class="game-title">Steam Wallet</h3>
+          <p class="game-desc">Saldo para tu cartera de Steam en dólares y moneda local sin impuestos excesivos.</p>
+          <div class="game-card-footer">
+            <div>
+              <span class="game-price-label">Desde</span>
+              <div class="game-price-val">$5.00 USD</div>
+            </div>
+            <button class="btn btn-primary btn-recharge">Recargar</button>
+          </div>
+        </div>
+      </article>
 
-        <div>
-            <select name="talles">
-                <option value="L">Large</option>
-                <option value="M">Medium</option>
-                <option value="S">Small</option>
-              </select>
+      <!-- 6. League of Legends -->
+      <article class="game-card" data-category="pc">
+        <div class="game-card-img-wrap">
+          <span class="game-tag-badge">PC</span>
+          <img src="https://images.unsplash.com/photo-1579373903781-fd5c0c30c4cd?auto=format&fit=crop&w=600&q=80" alt="League of Legends">
         </div>
-        
-        <div>
-            <label for="terminos">Aceptar Terminos y Condiciones</label>
-            <input type="checkbox" name="terminos" id="terminos">
+        <div class="game-card-body">
+          <span class="game-category">Riot Games</span>
+          <h3 class="game-title">League of Legends RP</h3>
+          <p class="game-desc">Riot Points oficiales para servidores LAS, LAN y Norteamérica.</p>
+          <div class="game-card-footer">
+            <div>
+              <span class="game-price-label">Desde</span>
+              <div class="game-price-val">$5.99 USD</div>
+            </div>
+            <button class="btn btn-primary btn-recharge">Recargar</button>
+          </div>
         </div>
+      </article>
 
-        <div>
-            <input type="submit" value="Enviar">
-            <input type="reset" value="Limpiar Formulario">
-        </div> 
-    </form>
+      <!-- 7. Call of Duty -->
+      <article class="game-card" data-category="mobile">
+        <div class="game-card-img-wrap">
+          <span class="game-tag-badge">Móvil / PC</span>
+          <span class="game-discount-badge">-12% OFF</span>
+          <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=600&q=80" alt="Call of Duty CP">
+        </div>
+        <div class="game-card-body">
+          <span class="game-category">Activision</span>
+          <h3 class="game-title">Call of Duty CP</h3>
+          <p class="game-desc">Puntos COD oficiales acreditados al instante para pases y ruletas míticas.</p>
+          <div class="game-card-footer">
+            <div>
+              <span class="game-price-label">Desde</span>
+              <div class="game-price-val">$1.99 USD</div>
+            </div>
+            <button class="btn btn-primary btn-recharge">Recargar</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 8. PlayStation Network -->
+      <article class="game-card" data-category="giftcards">
+        <div class="game-card-img-wrap">
+          <span class="game-tag-badge">Consola</span>
+          <img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db?auto=format&fit=crop&w=600&q=80" alt="PlayStation Card">
+        </div>
+        <div class="game-card-body">
+          <span class="game-category">Sony</span>
+          <h3 class="game-title">PlayStation Store Card</h3>
+          <p class="game-desc">Tarjetas de saldo PSN para PS4 y PS5 en cuentas USA y Latinoamérica.</p>
+          <div class="game-card-footer">
+            <div>
+              <span class="game-price-label">Desde</span>
+              <div class="game-price-val">$10.00 USD</div>
+            </div>
+            <button class="btn btn-primary btn-recharge">Recargar</button>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- ==========================================
+         TABLA DE COTIZACIÓN Y PAQUETES (MODERNA)
+         ========================================== -->
+    <div style="margin-top: 50px;">
+      <div class="section-title-wrap">
+        <h2>📊 Tabla Comparativa de Paquetes Destacados</h2>
+        <p>Valores de referencia y tiempos de entrega garantizados en tiempo real.</p>
+      </div>
+
+      <div class="gamer-table-wrap">
+        <table class="gamer-table">
+          <thead>
+            <tr>
+              <th>Juego / Servicio</th>
+              <th>Paquete de Monedas</th>
+              <th>Precio USD</th>
+              <th>Entrega</th>
+              <th>Disponibilidad</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Free Fire</strong></td>
+              <td>1060 + 106 Diamantes (Bonus)</td>
+              <td>$9.49</td>
+              <td>⚡ Inmediata (&lt; 60 seg)</td>
+              <td><span class="badge-status badge-instant">Stock Alto</span></td>
+            </tr>
+            <tr>
+              <td><strong>Valorant</strong></td>
+              <td>2050 Valorant Points (VP)</td>
+              <td>$19.99</td>
+              <td>⚡ Inmediata (&lt; 60 seg)</td>
+              <td><span class="badge-status badge-instant">Stock Alto</span></td>
+            </tr>
+            <tr>
+              <td><strong>Roblox</strong></td>
+              <td>800 Robux (Digital Code)</td>
+              <td>$9.99</td>
+              <td>⚡ Inmediata (&lt; 60 seg)</td>
+              <td><span class="badge-status badge-instant">Stock Alto</span></td>
+            </tr>
+            <tr>
+              <td><strong>Steam Wallet</strong></td>
+              <td>$20 USD Tarjeta de Saldo</td>
+              <td>$19.50</td>
+              <td>⚡ Inmediata (&lt; 60 seg)</td>
+              <td><span class="badge-status badge-instant">Disponible</span></td>
+            </tr>
+            <tr>
+              <td><strong>Mobile Legends</strong></td>
+              <td>706 Diamantes + 80 Bonus</td>
+              <td>$12.99</td>
+              <td>⚡ Inmediata (&lt; 60 seg)</td>
+              <td><span class="badge-status badge-instant">Stock Alto</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <!-- ==========================================
+       MODAL DE RECARGA INTERACTIVO
+       ========================================== -->
+  <div class="modal-overlay" id="rechargeModal">
+    <div class="modal-content">
+      <button class="modal-close-btn" id="closeModalBtn">✕</button>
+      <h3 id="modalGameTitle" style="font-size: 1.3rem; margin-bottom: 8px;">Recarga Rápida</h3>
+      <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 18px;">
+        Ingresa tu ID de jugador y selecciona el paquete que deseas acreditar.
+      </p>
+
+      <div class="form-group">
+        <label for="playerIdInput">ID de Jugador / UID / Usuario</label>
+        <input type="text" id="playerIdInput" class="form-control" placeholder="Ej: 849204921 o GamerPro#LAN">
+      </div>
+
+      <label style="font-size: 0.88rem; font-weight: 600; display: block;">Selecciona el Paquete:</label>
+      <div class="modal-packages-grid">
+        <div class="package-option selected" data-price="0.99">
+          <span class="pkg-amount">100 Monedas / Puntos</span>
+          <span class="pkg-price">$0.99 USD</span>
+        </div>
+        <div class="package-option" data-price="4.99">
+          <span class="pkg-amount">520 + 50 Bonus</span>
+          <span class="pkg-price">$4.99 USD</span>
+        </div>
+        <div class="package-option" data-price="9.49">
+          <span class="pkg-amount">1060 + 106 Bonus</span>
+          <span class="pkg-price">$9.49 USD</span>
+        </div>
+        <div class="package-option" data-price="18.99">
+          <span class="pkg-amount">2180 + 220 Bonus</span>
+          <span class="pkg-price">$18.99 USD</span>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; margin: 20px 0 16px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.08);">
+        <span style="color: var(--text-secondary); font-size: 0.9rem;">Total a pagar:</span>
+        <span id="modalTotal" style="font-size: 1.3rem; font-weight: 800; color: var(--accent-cyan);">$0.99 USD</span>
+      </div>
+
+      <button id="confirmOrderBtn" class="btn btn-cyan" style="width: 100%;">⚡ Confirmar y Pagar</button>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       FOOTER UNIFICADO
+       ========================================== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="brand-logo">
+          <span class="logo-icon">⚡</span>
+          <span class="brand-name">HAKI<span class="brand-highlight">GAMES</span></span>
+        </div>
+        <p>La plataforma gamer líder en recargas de videojuegos y tarjetas digitales con acreditación inmediata y soporte personalizado 24/7.</p>
+        <div class="social-links">
+          <a href="https://discord.com" target="_blank" class="social-pill" title="Discord">🎮</a>
+          <a href="https://instagram.com" target="_blank" class="social-pill" title="Instagram">📸</a>
+          <a href="https://youtube.com" target="_blank" class="social-pill" title="YouTube">📺</a>
+          <a href="https://whatsapp.com" target="_blank" class="social-pill" title="WhatsApp">💬</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="tienda.html">Tienda de Recargas</a></li>
+          <li><a href="nosotros.html">Sobre Nosotros</a></li>
+          <li><a href="contacto.html">Centro de Soporte</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Juegos Populares</h4>
+        <ul>
+          <li><a href="tienda.html">Free Fire Diamantes</a></li>
+          <li><a href="tienda.html">Valorant Points</a></li>
+          <li><a href="tienda.html">Roblox Robux</a></li>
+          <li><a href="tienda.html">Steam Wallet</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Seguridad y Confianza</h4>
+        <ul>
+          <li><a href="contacto.html">Preguntas Frecuentes</a></li>
+          <li><a href="contacto.html">Garantía Anti-Baneo</a></li>
+          <li><a href="contacto.html">Términos de Servicio</a></li>
+          <li><a href="contacto.html">Política de Reembolso</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>© 2026 Hakigames. Todos los derechos reservados. De gamers para gamers.</div>
+      <div>Hecho con HTML5, CSS3 y JavaScript moderno para la web.</div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
