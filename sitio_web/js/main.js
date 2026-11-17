@@ -132,4 +132,51 @@ document.addEventListener('DOMContentLoaded', () => {
       supportForm.reset();
     });
   }
+
+  // 6. Modal Lightbox para ampliar fotos del equipo (nosotros.html)
+  const avatarModal = document.getElementById('avatarModal');
+  const avatarModalImg = document.getElementById('avatarModalImg');
+  const avatarModalName = document.getElementById('avatarModalName');
+  const avatarModalRole = document.getElementById('avatarModalRole');
+  const closeAvatarModal = document.getElementById('closeAvatarModal');
+  const teamCards = document.querySelectorAll('.team-card');
+
+  if (avatarModal && avatarModalImg) {
+    teamCards.forEach(card => {
+      const avatarImg = card.querySelector('.team-avatar img');
+      if (avatarImg) {
+        const avatarWrap = card.querySelector('.team-avatar');
+        avatarWrap.title = 'Haz clic para ver la foto en grande';
+
+        avatarWrap.addEventListener('click', () => {
+          const name = card.querySelector('h4') ? card.querySelector('h4').textContent : '';
+          const role = card.querySelector('.team-role') ? card.querySelector('.team-role').textContent : '';
+          
+          avatarModalImg.src = avatarImg.src;
+          if (avatarModalName) avatarModalName.textContent = name;
+          if (avatarModalRole) avatarModalRole.textContent = role;
+          avatarModal.classList.add('active');
+        });
+      }
+    });
+
+    if (closeAvatarModal) {
+      closeAvatarModal.addEventListener('click', () => {
+        avatarModal.classList.remove('active');
+      });
+    }
+
+    avatarModal.addEventListener('click', (e) => {
+      if (e.target === avatarModal) {
+        avatarModal.classList.remove('active');
+      }
+    });
+
+    // Cerrar también con tecla Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && avatarModal.classList.contains('active')) {
+        avatarModal.classList.remove('active');
+      }
+    });
+  }
 });

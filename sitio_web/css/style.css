@@ -915,6 +915,76 @@ img {
   justify-content: center;
   font-size: 2.2rem;
   border: 3px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.team-avatar:hover {
+  transform: scale(1.08);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 20px rgba(0, 245, 255, 0.45);
+}
+
+.team-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.team-avatar:hover img {
+  transform: scale(1.05);
+}
+
+/* Modal Lightbox para fotos ampliadas */
+.avatar-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 7, 13, 0.88);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+  padding: 20px;
+}
+
+.avatar-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.avatar-modal-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-glow);
+  border-radius: 20px;
+  padding: 24px;
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.95), 0 0 35px rgba(0, 245, 255, 0.3);
+  transform: scale(0.9);
+  transition: var(--transition);
+}
+
+.avatar-modal-overlay.active .avatar-modal-card {
+  transform: scale(1);
+}
+
+.avatar-modal-img {
+  width: 100%;
+  max-height: 440px;
+  object-fit: contain;
+  border-radius: 14px;
+  margin-bottom: 16px;
+  background: #0b0f1a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .team-card h4 {

@@ -127,7 +127,9 @@
       <div class="team-grid">
         <!-- Miembro 1 -->
         <article class="team-card">
-          <div class="team-avatar">👑</div>
+          <div class="team-avatar">
+            <img src="images/criswalt_ceo.jpg" alt="Criswalt - Fundador & CEO">
+          </div>
           <h4>Criswalt</h4>
           <div class="team-role">Fundador & CEO</div>
           <p>Ex-jugador de shooters competitivos y fanático de la tecnología. Lidera la visión del proyecto y acuerdos oficiales.</p>
@@ -135,7 +137,9 @@
 
         <!-- Miembro 2 -->
         <article class="team-card">
-          <div class="team-avatar">⚡</div>
+          <div class="team-avatar">
+            <img src="images/joshua_operaciones.jpg" alt="Joshua - Director de Operaciones" style="object-position: center 42%;">
+          </div>
           <h4>Joshua</h4>
           <div class="team-role">Director de Operaciones</div>
           <p>Especialista en distribución digital y pasarelas de pago seguro para toda la región.</p>
@@ -143,7 +147,9 @@
 
         <!-- Miembro 3 -->
         <article class="team-card">
-          <div class="team-avatar">🎧</div>
+          <div class="team-avatar">
+            <img src="images/luis_soporte.jpg" alt="Luis - Líder de Soporte al Gamer">
+          </div>
           <h4>Luis</h4>
           <div class="team-role">Líder de Soporte al Gamer</div>
           <p>Siempre activo en Discord y WhatsApp para asegurar que ninguna consulta quede sin resolver.</p>
@@ -151,7 +157,9 @@
 
         <!-- Miembro 4 -->
         <article class="team-card">
-          <div class="team-avatar">💻</div>
+          <div class="team-avatar">
+            <img src="images/faker_team.jpg" alt="Gabo - Desarrollador Web">
+          </div>
           <h4>Gabo</h4>
           <div class="team-role">Desarrollador Web</div>
           <p>Encargado de la arquitectura de la web, interfaces de usuario y automatización de recargas.</p>
@@ -229,6 +237,16 @@
       <div>Hecho con HTML5, CSS3 y JavaScript moderno para la web.</div>
     </div>
   </footer>
+
+  <!-- Modal Lightbox para ampliar la foto del miembro del equipo -->
+  <div class="avatar-modal-overlay" id="avatarModal">
+    <div class="avatar-modal-card">
+      <button class="modal-close-btn" id="closeAvatarModal" aria-label="Cerrar vista grande">✕</button>
+      <img id="avatarModalImg" src="" alt="Foto ampliada del miembro" class="avatar-modal-img">
+      <h3 id="avatarModalName" style="font-size: 1.35rem; margin-bottom: 4px; color: var(--text-primary);"></h3>
+      <p id="avatarModalRole" style="color: var(--accent-cyan); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;"></p>
+    </div>
+  </div>
 
   <script src="js/main.js"></script>
 </body>
