@@ -1,6 +1,8 @@
 # ⚡ HAKIGAMES — Plataforma de Recargas de Videojuegos
 
-Plataforma web de recargas oficiales y tarjetas de saldo digitales para videojuegos, inspirada en estándares profesionales de la industria e interfaces modernas como **BONOX**. Proyecto desarrollado con arquitectura web semántica, diseño responsivo y componentes interactivos.
+![CI - Verificación de Calidad Web](https://github.com/Gabo-1223/hakigame/actions/workflows/ci.yml/badge.svg)
+
+Plataforma web de recargas oficiales y tarjetas de saldo digitales para videojuegos, inspirada en estándares profesionales de la industria e interfaces modernas como **BONOX**. Proyecto desarrollado con arquitectura web semántica, diseño responsivo, componentes interactivos y flujo automatizado de integración continua (CI) con **GitHub Actions**.
 
 ---
 
@@ -23,16 +25,21 @@ Organización modular del proyecto en el repositorio:
 
 ```text
 estructura_pagina_web/
+├── .github/
+│   └── workflows/
+│       └── ci.yml                  # Flujo de trabajo CI para GitHub Actions (Validaciones automáticas)
+├── .htmlhintrc                     # Configuración de reglas para el linter de HTML5
 ├── sitio_web/                      # Directorio principal del sitio web
 │   ├── css/
 │   │   └── style.css               # Hoja de estilos globales (Variables, Reset, Layout, Componentes)
 │   ├── js/
-│   │   └── main.js                 # Lógica interactiva (Modal, Filtros, Acordeón FAQ, Menú móvil)
-│   ├── images/                     # Recursos gráficos, logotipos e iconos
-│   │   ├── html.png
-│   │   ├── inove.jpg
-│   │   ├── instagram.png
-│   │   └── youtube.png
+│   │   └── main.js                 # Lógica interactiva (Modal, Filtros, Acordeón FAQ, Lightbox, Menú móvil)
+│   ├── images/                     # Recursos gráficos, logotipos y fotos de perfil del equipo
+│   │   ├── criswalt_ceo.jpg
+│   │   ├── joshua_operaciones.jpg
+│   │   ├── luis_soporte.jpg
+│   │   ├── faker_team.jpg
+│   │   └── ...
 │   ├── index.html                  # Página de Inicio (Hero, Insignias, Populares, Pasarelas de Pago)
 │   ├── tienda.html                 # Catálogo oficial de recargas y tabla comparativa
 │   ├── contacto.html               # Centro de ayuda, canales directos, formulario y FAQ
@@ -53,8 +60,9 @@ El proyecto está construido utilizando tecnologías web nativas, siguiendo los 
 | :--- | :--- |
 | **HTML5 Semántico** | Estructura accesible y limpia utilizando etiquetas estándar (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`). |
 | **CSS3 Avanzado** | Estilos modernos implementando **Variables CSS (Custom Properties)**, diseño responsivo con **Flexbox & Grid**, transiciones y efectos de iluminación neón. |
-| **Vanilla JavaScript (ES6+)** | Lógica e interactividad dinámica sin dependencias pesadas: manipulación del DOM, controladores de eventos, filtrado de elementos y ventanas modales. |
-| **Git & GitHub** | Sistema de control de versiones distribuido, respetando el flujo de ramas, mensajes de commit semánticos y entrega continua. |
+| **Vanilla JavaScript (ES6+)** | Lógica e interactividad dinámica sin dependencias pesadas: manipulación del DOM, controladores de eventos, filtrado de elementos, modal de recarga y lightbox. |
+| **GitHub Actions (CI/CD)** | Integración continua automatizada: valida la sintaxis de JavaScript, audita la calidad de HTML con HTMLHint y comprueba la integridad de estilos y recursos en cada push y PR. |
+| **Git & GitHub** | Sistema de control de versiones distribuido, respetando el flujo de ramas protegidas, mensajes de commit semánticos y entrega continua. |
 
 ---
 
