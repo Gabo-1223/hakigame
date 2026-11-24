@@ -49,18 +49,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 4. Modal Interactivo de Recarga Rápida
+  // 4. Modal Interactivo de Recarga Rápida, Ofertas y Pases
   const modalOverlay = document.getElementById('rechargeModal');
   const modalCloseBtn = document.getElementById('closeModalBtn');
   const modalGameTitle = document.getElementById('modalGameTitle');
   const rechargeBtns = document.querySelectorAll('.btn-recharge');
+  const bundleBtns = document.querySelectorAll('.btn-bundle');
+  const passBtns = document.querySelectorAll('.btn-pass');
   const pkgOptions = document.querySelectorAll('.package-option');
   const modalTotal = document.getElementById('modalTotal');
   const confirmOrderBtn = document.getElementById('confirmOrderBtn');
   const playerIdInput = document.getElementById('playerIdInput');
 
   if (modalOverlay) {
-    // Abrir modal con datos del juego seleccionado
+    // A) Abrir modal para Recargas estándar
     rechargeBtns.forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
@@ -70,6 +72,81 @@ document.addEventListener('DOMContentLoaded', () => {
         if (modalGameTitle) {
           modalGameTitle.textContent = `Recarga para ${title}`;
         }
+        if (modalTotal) {
+          modalTotal.textContent = '$0.99 USD';
+        }
+        pkgOptions.forEach((opt, idx) => {
+          opt.style.display = 'block';
+          if (idx === 0) opt.classList.add('selected');
+          else opt.classList.remove('selected');
+        });
+        modalOverlay.classList.add('active');
+      });
+    });
+
+    // B) Abrir modal para Ofertas Especiales + Skin de Regalo
+    bundleBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const card = btn.closest('.bundle-card');
+        const title = card ? card.querySelector('.game-title').textContent : 'Oferta';
+        const price = card ? card.getAttribute('data-price') || '14.99' : '14.99';
+        const skin = card ? card.getAttribute('data-skin') || 'Skin Exclusiva' : 'Skin Exclusiva';
+
+        if (modalGameTitle) {
+          modalGameTitle.textContent = `🎁 Oferta + Skin: ${title}`;
+        }
+        if (modalTotal) {
+          modalTotal.textContent = `$${price} USD`;
+        }
+
+        // Marcar la opción seleccionada con la oferta
+        pkgOptions.forEach((opt, idx) => {
+          if (idx === 0) {
+            opt.classList.add('selected');
+            const amtSpan = opt.querySelector('.pkg-amount');
+            const priceSpan = opt.querySelector('.pkg-price');
+            if (amtSpan) amtSpan.textContent = `Bundle Completo + ${skin}`;
+            if (priceSpan) priceSpan.textContent = `$${price} USD`;
+            opt.style.display = 'block';
+          } else {
+            opt.style.display = 'none';
+          }
+        });
+
+        modalOverlay.classList.add('active');
+      });
+    });
+
+    // C) Abrir modal para Pases de Batalla
+    passBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const card = btn.closest('.pass-card');
+        const title = card ? card.querySelector('.game-title').textContent : 'Pase de Batalla';
+        const price = card ? card.getAttribute('data-price') || '9.99' : '9.99';
+        const season = card ? card.getAttribute('data-season') || 'Temporada Activa' : 'Temporada Activa';
+
+        if (modalGameTitle) {
+          modalGameTitle.textContent = `⚔️ Activar: ${title} (${season})`;
+        }
+        if (modalTotal) {
+          modalTotal.textContent = `$${price} USD`;
+        }
+
+        pkgOptions.forEach((opt, idx) => {
+          if (idx === 0) {
+            opt.classList.add('selected');
+            const amtSpan = opt.querySelector('.pkg-amount');
+            const priceSpan = opt.querySelector('.pkg-price');
+            if (amtSpan) amtSpan.textContent = `Pase de Batalla Premium (${season})`;
+            if (priceSpan) priceSpan.textContent = `$${price} USD`;
+            opt.style.display = 'block';
+          } else {
+            opt.style.display = 'none';
+          }
+        });
+
         modalOverlay.classList.add('active');
       });
     });
@@ -87,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Selección de paquetes
+    // Selección de paquetes estándar
     pkgOptions.forEach(option => {
       option.addEventListener('click', () => {
         pkgOptions.forEach(opt => opt.classList.remove('selected'));
@@ -109,11 +186,11 @@ document.addEventListener('DOMContentLoaded', () => {
           return;
         }
 
-        confirmOrderBtn.textContent = '⏳ Procesando recarga...';
+        confirmOrderBtn.textContent = '⏳ Procesando orden...';
         confirmOrderBtn.disabled = true;
 
         setTimeout(() => {
-          alert(`🎉 ¡Éxito! Tu orden para el ID [${idVal}] ha sido procesada de forma segura. Recibirás tu recarga en menos de 60 segundos.`);
+          alert(`🎉 ¡Éxito! Tu orden para el ID [${idVal}] ha sido procesada de forma segura. La acreditación o pase se activará en tu cuenta en menos de 60 segundos.`);
           confirmOrderBtn.textContent = '⚡ Confirmar y Pagar';
           confirmOrderBtn.disabled = false;
           modalOverlay.classList.remove('active');
