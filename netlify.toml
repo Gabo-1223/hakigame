@@ -1,0 +1,7 @@
+# Configuración de despliegue en Netlify para Hakigames
+[build]
+  # Carpeta donde vive el sitio web real (HTML, CSS, JS e imágenes)
+  publish = "sitio_web"
+  
+  # No requiere comando de compilación porque es HTML/CSS/JS estático puro
+  command = ""
